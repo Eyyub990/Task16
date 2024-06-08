@@ -50,30 +50,19 @@ namespace WebAppOgani.Controllers
         {
             var post = new SubscribePost
             {
-                Email = email
+                Email = email,
+                CreatedAt = DateTime.Now
             };
 
-            if (post is not null)
-            {
-                return Json(new
-                {
-                    error = true,
-                    message = "artiq abone olunub!"
-                });
-            }
-            else
-            {
-                Db.SubscribePosts.Add(post);
-                Db.SaveChanges();
 
-                return Json(new
-                {
-                    error = false,
-                    message = "abone olundu!"
-                });
-            }
+            Db.SubscribePosts.Add(post);
+            Db.SaveChanges();
 
-            
+            return Json(new
+            {
+                error = false,
+                message = "abone olundu!"
+            });
         }
     }
 }

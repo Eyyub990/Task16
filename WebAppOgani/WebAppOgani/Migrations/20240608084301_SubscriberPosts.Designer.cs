@@ -12,8 +12,8 @@ using WebAppOgani.Models.Contexts;
 namespace WebAppOgani.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240607192244_SubscribePosts")]
-    partial class SubscribePosts
+    [Migration("20240608084301_SubscriberPosts")]
+    partial class SubscriberPosts
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,11 +69,18 @@ namespace WebAppOgani.Migrations
             modelBuilder.Entity("WebAppOgani.Models.Entities.SubscribePost", b =>
                 {
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("varchar");
 
-                    b.ToTable("SubscribePost");
+                    b.Property<DateTime?>("ApprovedAt")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime");
+
+                    b.HasKey("Email");
+
+                    b.ToTable("SubscribePosts");
                 });
 #pragma warning restore 612, 618
         }

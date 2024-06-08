@@ -69,6 +69,12 @@ namespace WebAppOgani.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("varchar");
 
+                    b.Property<DateTime?>("ApprovedAt")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime");
+
                     b.HasKey("Email");
 
                     b.ToTable("SubscribePosts");

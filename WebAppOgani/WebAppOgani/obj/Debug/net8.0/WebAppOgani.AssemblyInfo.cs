@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebAppOgani")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d105d7e9c5dc426bc147efb8b45e6a3336c6b6dd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8385e836d7fb592769fd7a734741708149d1e808")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebAppOgani")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebAppOgani")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
