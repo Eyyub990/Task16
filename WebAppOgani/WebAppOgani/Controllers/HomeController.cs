@@ -53,14 +53,27 @@ namespace WebAppOgani.Controllers
                 Email = email
             };
 
-            Db.SubscribePosts.Add(post);
-            Db.SaveChanges();
-
-            return Json(new
+            if (post is not null)
             {
-                error = false,
-                message = "abone olundu!"
-            });
+                return Json(new
+                {
+                    error = true,
+                    message = "artiq abone olunub!"
+                });
+            }
+            else
+            {
+                Db.SubscribePosts.Add(post);
+                Db.SaveChanges();
+
+                return Json(new
+                {
+                    error = false,
+                    message = "abone olundu!"
+                });
+            }
+
+            
         }
     }
 }
